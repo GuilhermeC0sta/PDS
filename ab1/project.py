@@ -52,20 +52,27 @@ X_dft2 = DFT(signal_radix2)  # DFT para radix-2
 X_dft3 = DFT(signal_radix3)  # DFT para radix-3
 X_fft2 = FFT_radix2(signal_radix2)
 X_fft3 = FFT_radix3(signal_radix3)
+X_fft_np2 = np.fft.fft(signal_radix2)  # FFT NumPy para N=8
+X_fft_np3 = np.fft.fft(signal_radix3)  # FFT NumPy para N=9
 
 # Plot dos resultados
-plt.figure(figsize=(18, 8))
-plt.subplot(2, 2, 1)
+plt.figure(figsize=(18, 12))
+plt.subplot(3, 2, 1)
 plt.stem(np.abs(X_dft2))
 plt.title("DFT (N=8)")
-plt.subplot(2, 2, 2)
+plt.subplot(3, 2, 2)
 plt.stem(np.abs(X_fft2))
 plt.title("Radix-2 FFT (N=8)")
-plt.subplot(2, 2, 3)
+plt.subplot(3, 2, 3)
 plt.stem(np.abs(X_dft3))
 plt.title("DFT (N=9)")
-plt.subplot(2, 2, 4)
+plt.subplot(3, 2, 4)
 plt.stem(np.abs(X_fft3))
 plt.title("Radix-3 FFT (N=9)")
+plt.subplot(3, 2, 5)
+plt.stem(np.abs(X_fft_np2))
+plt.title("NumPy FFT (N=8)")
+plt.subplot(3, 2, 6)
+plt.stem(np.abs(X_fft_np3))
+plt.title("NumPy FFT (N=9)")
 plt.show()
-
