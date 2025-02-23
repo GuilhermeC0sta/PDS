@@ -60,19 +60,25 @@ plt.figure(figsize=(18, 12))
 plt.subplot(3, 2, 1)
 plt.stem(np.abs(X_dft2))
 plt.title("DFT (N=8)")
-plt.subplot(3, 2, 2)
+
+plt.subplot(3, 2, 3)
 plt.stem(np.abs(X_fft2))
 plt.title("Radix-2 FFT (N=8)")
-plt.subplot(3, 2, 3)
+
+plt.subplot(3, 2, 2)
 plt.stem(np.abs(X_dft3))
 plt.title("DFT (N=9)")
+
 plt.subplot(3, 2, 4)
 plt.stem(np.abs(X_fft3))
 plt.title("Radix-3 FFT (N=9)")
+
 plt.subplot(3, 2, 5)
 plt.stem(np.abs(X_fft_np2))
 plt.title("NumPy FFT (N=8)")
+
 plt.subplot(3, 2, 6)
 plt.stem(np.abs(X_fft_np3))
 plt.title("NumPy FFT (N=9)")
+
 plt.show()
